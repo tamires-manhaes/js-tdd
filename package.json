@@ -5,12 +5,24 @@
   "repository": "https://github.com/tamires-manhaes/tdd-js.git",
   "author": "Tamires Manhães <tamiresmanhaes4@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js --ignore __tests__",
+    "pretest": "NODE_ENV=test sequelize db:migrate",
+    "test": "NODE_ENV=test jest",
+    "posttest": "NODE_ENV=test sequelize db:migrate:undo:all"
+  },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "sequelize": "^6.3.4",
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.2.0"
+    "jest": "^26.4.0",
+    "nodemon": "^2.0.4",
+    "sequelize-cli": "^6.2.0",
+    "supertest": "^4.0.2"
   }
 }

@@ -1,9 +1,9 @@
 module.exports = {
-  host: './src/database/database.db',
   username: 'postgres',
   password: 'docker',
   database: 'nodeauth',
   dialect: 'sqlite',
+  storage: './src/database/database.sqlite',
   logging: false,
   define: {
     timestamps: true,
